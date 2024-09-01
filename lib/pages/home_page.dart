@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/notes_body_widget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomePage'),
-      ),
-      body: const Center(
-        child: Text('HomePage'),
-      ),
+    return const Scaffold(
+      body: NotesBodyWidget(),
     );
   }
 }
