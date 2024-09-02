@@ -5,14 +5,19 @@ import '../core/theme/constants.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
+    required this.title,
+    this.maxLines = 1,
   });
+  final String title;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       cursorColor: kPrimaryColor,
+      maxLines: maxLines,
       decoration: InputDecoration(
-        labelText: "Title",
+        labelText: title,
         labelStyle: const TextStyle(color: kPrimaryColor),
         border: _buildBorder(),
         enabledBorder: _buildBorder(),
