@@ -1,31 +1,22 @@
-import '../../domain/entity/note.dart';
+import 'package:hive/hive.dart';
 
-class NoteModel extends Note {
-  const NoteModel({
-    super.id,
-    required super.title,
-    required super.content,
-    required super.createdDate,
-    required super.color,
+part 'note_model.g.dart';
+
+@HiveType(typeId: 0)
+class NoteModel extends HiveObject {
+  @HiveField(0)
+  final String title;
+  @HiveField(1)
+  final String content;
+  @HiveField(2)
+  final String date;
+  @HiveField(3)
+  final int color;
+
+  NoteModel({
+    required this.title,
+    required this.content,
+    required this.date,
+    required this.color,
   });
-
-  factory NoteModel.fromJson(Map<String, dynamic> json) {
-    return NoteModel(
-      id: json['id'],
-      title: json['title'],
-      content: json['content'],
-      createdDate: json['createdDate'],
-      color: json['color'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'content': content,
-      'createdDate': createdDate,
-      'color': color,
-    };
-  }
 }
