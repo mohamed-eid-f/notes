@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/add_note_bottom_sheet.dart';
-import '../widgets/notes_body_widget.dart';
+import '../widgets/home_page_body_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const NotesBodyWidget(),
+      body: const HomePageBodyWidget(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
