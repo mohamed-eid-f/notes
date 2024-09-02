@@ -13,6 +13,9 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+            ),
             builder: (context) => const AddNoteBottomSheet(),
           );
         },
