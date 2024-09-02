@@ -19,7 +19,7 @@ class NotesBodyWidget extends StatelessWidget {
             CustomAppbarWidget(),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.symmetric(vertical: 4.0),
                 child: NotesListView(),
               ),
             ),
