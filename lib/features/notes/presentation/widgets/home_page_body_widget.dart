@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'custom_appbar_widget.dart';
-import 'note_item_widget.dart';
 import 'notes_list_view.dart';
 
 class HomePageBodyWidget extends StatelessWidget {
