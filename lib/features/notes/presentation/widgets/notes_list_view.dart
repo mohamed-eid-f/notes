@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes/pages/edit_page.dart';
-import 'package:notes/widgets/note_item_widget.dart';
+import 'package:notes/features/notes/presentation/pages/edit_page.dart';
+import 'package:notes/features/notes/presentation/widgets/note_item_widget.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({

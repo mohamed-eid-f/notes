@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes/widgets/custom_appbar_widget.dart';
+import 'package:notes/features/notes/presentation/widgets/custom_appbar_widget.dart';
 
 import '../widgets/custom_text_field.dart';
 
