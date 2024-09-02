@@ -19,16 +19,17 @@ var appThemeData = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      foregroundColor: Colors.white,
+      foregroundColor: Colors.black,
       backgroundColor: _primaryColor,
       shape: const RoundedRectangleBorder(
-        // borderRadius: BorderRadius.circular(0),
+        borderRadius: BorderRadius.all(Radius.circular(8)),
         side: BorderSide(color: _primaryColor, width: 2),
       ),
     ),
   ),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
+      minimumSize: const Size.fromWidth(100),
       shape: const RoundedRectangleBorder(
         // borderRadius: BorderRadius.all(Radius.circular(16)),
         side: BorderSide(color: _primaryColor, width: 2),
