@@ -23,6 +23,10 @@ class CustomTextField extends StatelessWidget {
         return null;
       },
       cursorColor: kPrimaryColor,
+      style: Theme.of(context)
+          .textTheme
+          .bodyMedium!
+          .copyWith(color: kPrimaryColor),
       maxLines: maxLines,
       decoration: InputDecoration(
         labelText: title,
