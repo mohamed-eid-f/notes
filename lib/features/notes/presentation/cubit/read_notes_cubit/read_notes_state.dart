@@ -9,8 +9,4 @@ sealed class ReadNotesState extends Equatable {
 
 final class ReadNotesInitial extends ReadNotesState {}
 
-final class ReadNotesSuccess extends ReadNotesState {
-  final List<NoteModel> notes;
-
-  const ReadNotesSuccess({required this.notes});
-}
+final class ReadNotesSuccess extends ReadNotesState {}

@@ -47,27 +47,27 @@ var appThemeData = ThemeData(
   // ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
-      color: _primaryColor,
+      color: Colors.black,
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
     displayMedium: TextStyle(
-      color: _primaryColor,
+      color: Colors.black,
       fontSize: 20,
       fontWeight: FontWeight.bold,
     ),
     displaySmall: TextStyle(
-      color: _primaryColor,
+      color: Colors.black,
       fontSize: 16,
       fontWeight: FontWeight.bold,
     ),
     bodyLarge: TextStyle(
-      color: _primaryColor,
+      color: Colors.black,
       fontSize: 14,
       fontWeight: FontWeight.normal,
     ),
     bodyMedium: TextStyle(
-      color: _primaryColor,
+      color: Colors.black,
       fontSize: 12,
       fontWeight: FontWeight.normal,
     ),

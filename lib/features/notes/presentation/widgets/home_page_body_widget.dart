@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../cubit/read_notes_cubit/read_notes_cubit.dart';
 import 'custom_appbar_widget.dart';
 import 'notes_list_view.dart';
 
-class HomePageBodyWidget extends StatelessWidget {
+class HomePageBodyWidget extends StatefulWidget {
   const HomePageBodyWidget({
     super.key,
   });
+
+  @override
+  State<HomePageBodyWidget> createState() => _HomePageBodyWidgetState();
+}
+
+class _HomePageBodyWidgetState extends State<HomePageBodyWidget> {
+  @override
+  void initState() {
+    BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

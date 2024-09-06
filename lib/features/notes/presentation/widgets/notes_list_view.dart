@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/features/notes/data/models/note_model.dart';
 import 'package:notes/features/notes/presentation/pages/edit_page.dart';
 import 'package:notes/features/notes/presentation/widgets/note_item_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,9 +15,12 @@ class NotesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ReadNotesCubit, ReadNotesState>(
       builder: (context, state) {
+        List<NoteModel> notes =
+            BlocProvider.of<ReadNotesCubit>(context).notes ?? [];
+        debugPrint('notes: ${notes.length} & notes: $notes');
         return ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
-          itemCount: state is ReadNotesSuccess ? state.notes.length : 0,
+          itemCount: state is ReadNotesSuccess ? notes.length : 0,
           itemBuilder: (context, index) => InkWell(
             onTap: () {
               Navigator.push(
@@ -24,7 +28,7 @@ class NotesListView extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => const EditPage()),
               );
             },
-            child: const NoteItemWidget(),
+            child: NoteItemWidget(note: notes[index]),
           ),
         );
       },

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../data/models/note_model.dart';
 
 class NoteItemWidget extends StatelessWidget {
-  const NoteItemWidget({super.key});
-
+  const NoteItemWidget({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.orange.shade100,
+        color: Color(note.color),
         borderRadius: const BorderRadius.all(Radius.circular(16)),
       ),
       child: Column(
@@ -18,21 +19,15 @@ class NoteItemWidget extends StatelessWidget {
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text(
-              "Flutter tips",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-              ),
+            title: Text(
+              note.title,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
-            subtitle: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
+            subtitle: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Text(
-                "Build your career in Flutter",
-                style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 18,
-                ),
+                note.content,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             trailing: IconButton(
@@ -43,9 +38,9 @@ class NoteItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Text(
-            "May 10, 2022",
-            style: TextStyle(color: Colors.black54, fontSize: 16),
+          Text(
+            note.date,
+            style: const TextStyle(color: Colors.black54, fontSize: 16),
           ),
         ],
       ),
