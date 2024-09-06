@@ -11,12 +11,8 @@ class ReadNotesCubit extends Cubit<ReadNotesState> {
   ReadNotesCubit() : super(ReadNotesInitial());
 
   fetchAllNotes() {
-    try {
-      var noteBox = Hive.box<NoteModel>(kNotesBox);
-      List<NoteModel> notes = noteBox.values.toList();
-      emit(ReadNotesSuccess(notes: notes));
-    } catch (e) {
-      emit(ReadNotesFailure(errMessage: e.toString()));
-    }
+    var noteBox = Hive.box<NoteModel>(kNotesBox);
+    List<NoteModel> notes = noteBox.values.toList();
+    emit(ReadNotesSuccess(notes: notes));
   }
 }
