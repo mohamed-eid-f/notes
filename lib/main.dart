@@ -6,6 +6,7 @@ import 'package:notes/core/theme/constants.dart';
 import 'core/theme/app_theme_data.dart';
 import 'features/notes/data/models/note_model.dart';
 import 'features/notes/presentation/cubit/bloc_observer.dart';
+import 'features/notes/presentation/cubit/read_notes_cubit/notes_cubit.dart';
 import 'features/notes/presentation/pages/home_page.dart';
 
 void main() async {
@@ -21,11 +22,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: appThemeData,
-      home: const HomePage(),
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: appThemeData,
+        home: const HomePage(),
+      ),
     );
   }
 }

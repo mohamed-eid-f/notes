@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/read_notes_cubit/read_notes_cubit.dart';
+import '../cubit/read_notes_cubit/notes_cubit.dart';
 import 'custom_appbar_widget.dart';
 import 'notes_list_view.dart';
 
@@ -17,7 +17,7 @@ class HomePageBodyWidget extends StatefulWidget {
 class _HomePageBodyWidgetState extends State<HomePageBodyWidget> {
   @override
   void initState() {
-    BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     super.initState();
   }
 
