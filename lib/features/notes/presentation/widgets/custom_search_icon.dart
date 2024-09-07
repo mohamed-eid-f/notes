@@ -4,8 +4,10 @@ class CustomSearchIcon extends StatelessWidget {
   const CustomSearchIcon({
     super.key,
     required this.icon,
+    this.onPressed,
   });
   final IconData icon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +18,12 @@ class CustomSearchIcon extends StatelessWidget {
         color: Colors.white10,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Icon(
-        icon,
-        size: 28,
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          size: 28,
+        ),
       ),
     );
   }

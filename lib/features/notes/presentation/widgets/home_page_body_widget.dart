@@ -28,7 +28,11 @@ class _HomePageBodyWidgetState extends State<HomePageBodyWidget> {
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: Column(
           children: [
-            CustomAppbarWidget(title: "Notes", icon: Icons.search),
+            CustomAppbarWidget(
+              title: "Notes",
+              icon: Icons.search,
+              onPressed: null,
+            ),
             Expanded(
               child: NotesListView(),
             ),

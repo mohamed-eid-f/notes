@@ -20,15 +20,7 @@ class NotesListView extends StatelessWidget {
         return ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           itemCount: notes.length,
-          itemBuilder: (context, index) => InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const EditPage()),
-              );
-            },
-            child: NoteItemWidget(note: notes[index]),
-          ),
+          itemBuilder: (context, index) => NoteItemWidget(note: notes[index]),
         );
       },
     );

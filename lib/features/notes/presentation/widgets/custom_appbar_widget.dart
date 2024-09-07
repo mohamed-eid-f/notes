@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'custom_search_icon.dart';
 
 class CustomAppbarWidget extends StatelessWidget {
-  const CustomAppbarWidget(
-      {super.key, required this.title, required this.icon});
+  const CustomAppbarWidget({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.onPressed,
+  });
   final String title;
   final IconData icon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,10 @@ class CustomAppbarWidget extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        CustomSearchIcon(icon: icon),
+        CustomSearchIcon(
+          icon: icon,
+          onPressed: onPressed,
+        ),
       ],
     );
   }
